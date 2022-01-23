@@ -1,33 +1,36 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import RecipeSearch from "./RecipeSearch"
+import Recipe from "./Recipe"
 
-const RecipeResults = ({ hit }) => {
-//need to pass { recipes } down as a prop
-  console.log(hit.recipe.dietLabels)
-//need to add the card as a link eventually
+const RecipeResults = ({ recipes, handleClick }) => {
     return(
-        <div className="container"> 
-            <div className='card'>
-                <div className='card-image'>
-                    <img
-                        src={ hit.recipe.image } //i got these 2 names from the object
-                        alt={ hit.recipe.label } //so we shouldn't have to change anything
-                    />
+        recipes.map(recipe => ( 
+            <Link to={`/recipe/${recipe.recipe.label}`}
+            state={{ recipe:recipe.recipe }} >
+                <div className="container" >
+                    <div className='card'>
+                        <div className='card-image'>
+                            <img
+                                src={ recipe.recipe.image } //i got these 2 names from the object
+                                alt={ recipe.recipe.label } //so we shouldn't have to change anything
+                            />
+                        </div>
+                        <div className="card-name">
+                            <p>{ recipe.recipe.label }</p>
+                        </div>
+                        <ul className="card-diet">
+                                <li>{ recipe.recipe.dietLabels }</li>
+                        </ul>
+                        <div className="card-time">
+                            <p>{ recipe.recipe.totalTime } minutes</p>
+                        </div>
+                    </div>
                 </div>
-                <div className="card-name">
-                    <p>{ hit.recipe.label }</p>
-                </div>
-                <div className="card-diet">
-                    <p>{ hit.recipe.dietLabels }</p>
-                </div>
-                <div className="card-time">
-                    <p>{ hit.recipe.totalTime }</p>
-                </div>
-            </div>            
-        </div>
+            </Link>
+                ))   
+        
     )
 }
-
 
 export default RecipeResults

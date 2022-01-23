@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Dashboard from './Components.js/Dashboard';
 import Recipe from './Components.js/Recipe';
@@ -26,26 +26,30 @@ function App() {
         fetch(url)
         .then(res => res.json())
         .then(res => {
-            console.log(res)
-            setRecipes(res.hits)
-            console.log(res.hits)
+            console.log(res) 
+            console.log(res.hits) 
+            setRecipes(res.hits) 
+            
         })
         .catch(console.error)
-        console.log(recipes)
     }, [])
+
+    const handleClick = (recipe) => {
+      recipes.map(eachRecipe => {
+        if (eachRecipe === recipe) {
+          return <Recipe />
+        }
+        console.log(recipe)
+    })}
 
   return (
         <div className="App">
           <Dashboard />
           <Routes>
             <Route path='/' element={ <RecipeSearch />}/>
-            <Route path='/reciperesults' element={ <RecipeResults /> } />
-            <Route path='/recipe' element={ <Recipe /> } />
+            <Route path='/reciperesults' element={ <RecipeResults recipes={ recipes } handleClick={ handleClick }/> } />
+            <Route path='/recipe/:label' element={ <Recipe /> } />
           </Routes>
-          {recipes.map(recipe => (
-            <RecipeResults hit={ recipe }/>
-            )
-          )} 
         </div>
     
   );
