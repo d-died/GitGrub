@@ -14,14 +14,14 @@ function App() {
     const edamamCreds = {
         id: process.env.REACT_APP_EDAMAM_ID,
         key: process.env.REACT_APP_EDAMAM_KEY,
-        api: 'https://api.edamam.com/api/recipes/v2?type=public',
-        endpoint: ''
+        api: 'https://api.edamam.com/api/recipes/v2?type=public'
       }
       //we will eventually use this to make the link dynamic!
     
  
-    useEffect(() => {
-        const url = 'https://api.edamam.com/api/recipes/v2?type=public&q=vegan&app_id=027ee8e8&app_key=46ca411c2d4ce27a801b64444133a70b&diet=high-protein'
+    const getRecipes = () =>{
+     
+        const url = `${edamamCreds.api}&q=${searchString}&app_id=${edamamCreds.id}&app_key=${edamamCreds.key}`
         
         fetch(url)
         .then(res => res.json())
@@ -32,15 +32,16 @@ function App() {
             
         })
         .catch(console.error)
-    }, [])
+      }
 
     const handleChange = (e) => {
       setSearchString(e.target.value)
+      console.log(searchString)
     }
 
     const handleSubmit = (e) => {
       e.preventDefault()
-      setRecipes(searchString)
+      getRecipes(searchString)
     }
 
   return (
