@@ -9,6 +9,7 @@ import RecipeSearch from './Components.js/RecipeSearch';
 function App() {
 
   const [ recipes, setRecipes ] = useState([])
+  const [ searchString, setSearchString ] = useState('')
     
     const edamamCreds = {
         id: process.env.REACT_APP_EDAMAM_ID,
@@ -28,9 +29,9 @@ function App() {
             console.log(res)
             setRecipes(res.hits)
             console.log(res.hits)
-            console.log(recipes)
         })
         .catch(console.error)
+        console.log(recipes)
     }, [])
 
   return (
@@ -41,6 +42,10 @@ function App() {
             <Route path='/reciperesults' element={ <RecipeResults /> } />
             <Route path='/recipe' element={ <Recipe /> } />
           </Routes>
+          {recipes.map(recipe => (
+            <RecipeResults hit={ recipe }/>
+            )
+          )} 
         </div>
     
   );

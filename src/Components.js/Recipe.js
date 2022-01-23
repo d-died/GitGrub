@@ -1,12 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
 
 const Recipe = () => {
     
-    const [ recipe, setRecipe ] = useState
+    const [ recipe, setRecipe ] = useState([])
     
     return(
         <div className='recipe'>
-            <div className='recipe-image'>
+            {/* <div className='recipe-image'>
                 <img
                     src={ hit.recipe.image } //imight have to change "hit" out for recipe 
                     alt={ hit.recipe.label } //see audobon for a ref assignment
@@ -29,7 +29,7 @@ const Recipe = () => {
             </div>
             <div>
                 <p>{ hit.recipe.ingredients }</p>
-            </div>
+            </div> */}
         </div>
     )
 }
