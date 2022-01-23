@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import RecipeSearch from "./RecipeSearch"
 import Recipe from "./Recipe"
 
-const RecipeResults = ({ recipes, handleClick }) => {
+const RecipeResults = ({ recipes }) => {
     return(
         recipes.map(recipe => ( 
             <Link to={`/recipe/${recipe.recipe.label}`}

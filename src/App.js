@@ -34,20 +34,21 @@ function App() {
         .catch(console.error)
     }, [])
 
-    const handleClick = (recipe) => {
-      recipes.map(eachRecipe => {
-        if (eachRecipe === recipe) {
-          return <Recipe />
-        }
-        console.log(recipe)
-    })}
+    const handleChange = (e) => {
+      setSearchString(e.target.value)
+    }
+
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      setRecipes(searchString)
+    }
 
   return (
         <div className="App">
           <Dashboard />
           <Routes>
-            <Route path='/' element={ <RecipeSearch />}/>
-            <Route path='/reciperesults' element={ <RecipeResults recipes={ recipes } handleClick={ handleClick }/> } />
+            <Route path='/' element={ <RecipeSearch handleChange={ handleChange } handleSubmit={ handleSubmit } searchString = {searchString}/>}/>
+            <Route path='/reciperesults' element={ <RecipeResults recipes={ recipes } /> }/>
             <Route path='/recipe/:label' element={ <Recipe /> } />
           </Routes>
         </div>
