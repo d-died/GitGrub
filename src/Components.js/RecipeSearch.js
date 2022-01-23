@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 const RecipeSearch = () => {
 
     return (
-        <p>Recipe Search</p>
+        <Link to='/reciperesults'/> //this will eventually be a link via the submit button
     )
 
 }

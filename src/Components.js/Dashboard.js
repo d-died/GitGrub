@@ -6,9 +6,7 @@ const Dashboard = () => {
     return(
         <div>
             <nav className="bar">
-                <Link to="/">
                     <h2 className="gitgrub">GitGrub</h2>
-                </Link>
             </nav>
         </div>
     )
