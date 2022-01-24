@@ -10,5 +10,12 @@
 
 .gitgrub {
   font-family: 'Sedgwick Ave';
-  font-size: 4vh;
+  font-size: 50px;
+}
+
+.form {
+  font-family: 'Muktu';
+  font-size: 25px;
+  display: flex;
+  
 }

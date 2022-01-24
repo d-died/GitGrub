@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import WebFont from 'webfontloader';
 import './App.css';
 import Dashboard from './Components.js/Dashboard';
@@ -10,6 +10,7 @@ import Home from './Components.js/Home';
 
 function App() {
 
+  let navigate = useNavigate()
   const [ recipes, setRecipes ] = useState([])
   const [ searchString, setSearchString ] = useState('')
     
@@ -22,7 +23,7 @@ function App() {
     useEffect(() => {
       WebFont.load({
         google: {
-          families: ['Sedgwick Ave']
+          families: ['Sedgwick Ave', 'Mukta']
         }
       })
     })
@@ -39,7 +40,7 @@ function App() {
             console.log(res.hits) 
             setRecipes(res.hits)
             setSearchString('') 
-            //navigate to recipe results here
+            navigate('../reciperesults', { replace: true })
             
         })
         .catch(console.error)
@@ -62,7 +63,7 @@ function App() {
           <Dashboard handleChange={ handleChange } handleSubmit={ handleSubmit } searchString = {searchString}/>
           <Routes>
             <Route path='/' element={ <Home />}/>
-            <Route path='/reciperesults' render={ <RecipeResults recipes={ recipes } /> }/>
+            <Route path='/reciperesults' element={ <RecipeResults recipes={ recipes } /> }/>
             <Route path='/recipe/:label' element={ <Recipe /> } />
           </Routes>
         </div>
