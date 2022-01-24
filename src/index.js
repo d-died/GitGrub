@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import RecipeResults from './Components.js/RecipeResults';
-import Recipe from './Components.js/Recipe';
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

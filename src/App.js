@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Routes, Route, Link } from 'react-router-dom';
+import WebFont from 'webfontloader';
 import './App.css';
 import Dashboard from './Components.js/Dashboard';
 import Recipe from './Components.js/Recipe';
 import RecipeResults from './Components.js/RecipeResults';
 import RecipeSearch from './Components.js/RecipeSearch';
+import Home from './Components.js/Home';
 
 function App() {
 
@@ -16,6 +18,14 @@ function App() {
         key: process.env.REACT_APP_EDAMAM_KEY,
         api: 'https://api.edamam.com/api/recipes/v2?type=public'
       }
+
+    useEffect(() => {
+      WebFont.load({
+        google: {
+          families: ['Sedgwick Ave']
+        }
+      })
+    })
     
  
     const getRecipes = () =>{
@@ -49,10 +59,10 @@ function App() {
 
   return (
         <div className="App">
-          {/* <Dashboard /> */}
+          <Dashboard handleChange={ handleChange } handleSubmit={ handleSubmit } searchString = {searchString}/>
           <Routes>
-            <Route path='/' element={ <Dashboard handleChange={ handleChange } handleSubmit={ handleSubmit } searchString = {searchString}/>}/>
-            <Route path='/reciperesults' element={ <RecipeResults recipes={ recipes } /> }/>
+            <Route path='/' element={ <Home />}/>
+            <Route path='/reciperesults' render={ <RecipeResults recipes={ recipes } /> }/>
             <Route path='/recipe/:label' element={ <Recipe /> } />
           </Routes>
         </div>

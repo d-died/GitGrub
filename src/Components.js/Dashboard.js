@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from 'react-router-dom'
 import RecipeSearch from "./RecipeSearch"
-import App from "../App"
+
 
 const Dashboard = ({ handleChange, handleSubmit, searchString }) => {
 
@@ -16,7 +16,8 @@ const Dashboard = ({ handleChange, handleSubmit, searchString }) => {
                     <RecipeSearch
                         handleChange={ handleChange }
                         handleSubmit={ handleSubmit }
-                        searchString={ searchString } />
+                        searchString={ searchString } 
+                    />
             </nav>
         </div>
     )
