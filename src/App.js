@@ -16,7 +16,6 @@ function App() {
         key: process.env.REACT_APP_EDAMAM_KEY,
         api: 'https://api.edamam.com/api/recipes/v2?type=public'
       }
-      //we will eventually use this to make the link dynamic!
     
  
     const getRecipes = () =>{
@@ -28,7 +27,9 @@ function App() {
         .then(res => {
             console.log(res) 
             console.log(res.hits) 
-            setRecipes(res.hits) 
+            setRecipes(res.hits)
+            setSearchString('') 
+            //navigate to recipe results here
             
         })
         .catch(console.error)
@@ -42,13 +43,15 @@ function App() {
     const handleSubmit = (e) => {
       e.preventDefault()
       getRecipes(searchString)
+      console.log(searchString)
+      console.log(recipes)
     }
 
   return (
         <div className="App">
-          <Dashboard />
+          {/* <Dashboard /> */}
           <Routes>
-            <Route path='/' element={ <RecipeSearch handleChange={ handleChange } handleSubmit={ handleSubmit } searchString = {searchString}/>}/>
+            <Route path='/' element={ <Dashboard handleChange={ handleChange } handleSubmit={ handleSubmit } searchString = {searchString}/>}/>
             <Route path='/reciperesults' element={ <RecipeResults recipes={ recipes } /> }/>
             <Route path='/recipe/:label' element={ <Recipe /> } />
           </Routes>

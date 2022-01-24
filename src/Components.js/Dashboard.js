@@ -1,7 +1,9 @@
 import React from "react"
 import { Link } from 'react-router-dom'
+import RecipeSearch from "./RecipeSearch"
+import App from "../App"
 
-const Dashboard = () => {
+const Dashboard = ({ handleChange, handleSubmit, searchString }) => {
 
     return(
         <div>
@@ -11,6 +13,10 @@ const Dashboard = () => {
                             GitGrub
                         </Link>
                     </h2>
+                    <RecipeSearch
+                        handleChange={ handleChange }
+                        handleSubmit={ handleSubmit }
+                        searchString={ searchString } />
             </nav>
         </div>
     )

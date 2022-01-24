@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import RecipeResults from './RecipeResults'
 
 
 const RecipeSearch = ({ handleChange, handleSubmit, searchString}) => {
@@ -13,7 +14,7 @@ const RecipeSearch = ({ handleChange, handleSubmit, searchString}) => {
             onChange={ handleChange }
             value={ searchString }
             />
-            <button type='submit'>YUMMM</button>
+                <button type='submit' onClick={ <RecipeResults />}>YUMMM</button>
         </form>
         
         // <Link to='/reciperesults'/> //this will eventually be a link via the submit button
