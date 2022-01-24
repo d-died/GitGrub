@@ -4,6 +4,9 @@ import RecipeSearch from "./RecipeSearch"
 import Recipe from "./Recipe"
 
 const RecipeResults = ({ recipes }) => {
+    
+    const cooktime = recipes.recipe.totalTime
+    
     return(
         recipes.map(recipe => ( 
             <Link to={`/recipe/${recipe.recipe.label}`}
@@ -12,8 +15,8 @@ const RecipeResults = ({ recipes }) => {
                     <div className='card'>
                         <div className='card-image'>
                             <img
-                                src={ recipe.recipe.image } //i got these 2 names from the object
-                                alt={ recipe.recipe.label } //so we shouldn't have to change anything
+                                src={ recipe.recipe.image }
+                                alt={ recipe.recipe.label } 
                             />
                         </div>
                         <div className="card-name">
@@ -23,7 +26,7 @@ const RecipeResults = ({ recipes }) => {
                                 <li>{ recipe.recipe.dietLabels }</li>
                         </ul>
                         <div className="card-time">
-                            <p>{ recipe.recipe.totalTime } minutes</p>
+                            <p>{cooktime === 0 ? '' : `Prep Time: ${ cooktime } minutes` }</p>
                         </div>
                     </div>
                 </div>
