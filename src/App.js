@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { Routes, Route, Link, useNavigate } from 'react-router-dom';
-import WebFont from 'webfontloader';
-import './App.css';
-import Dashboard from './Components.js/Dashboard';
-import Recipe from './Components.js/Recipe';
-import RecipeResults from './Components.js/RecipeResults';
-import RecipeSearch from './Components.js/RecipeSearch';
-import Home from './Components.js/Home';
+import { Routes, Route, Link, useNavigate } from 'react-router-dom'
+import WebFont from 'webfontloader'
+import './App.css'
+import Dashboard from './Components.js/Dashboard'
+import Recipe from './Components.js/Recipe'
+import RecipeResults from './Components.js/RecipeResults'
+import RecipeSearch from './Components.js/RecipeSearch'
+import Home from './Components.js/Home'
 
 function App() {
 
-  let navigate = useNavigate()
+  const navigate = useNavigate()
   const [ recipes, setRecipes ] = useState([])
   const [ searchString, setSearchString ] = useState('')
     
@@ -23,15 +23,14 @@ function App() {
     useEffect(() => {
       WebFont.load({
         google: {
-          families: ['Sedgwick Ave', 'Mukta']
+          families: [ 'Sedgwick Ave', 'Mukta' ]
         }
       })
     })
-    
  
     const getRecipes = () =>{
      
-        const url = `${edamamCreds.api}&q=${searchString}&app_id=${edamamCreds.id}&app_key=${edamamCreds.key}`
+        const url = `${ edamamCreds.api }&q=${ searchString }&app_id=${ edamamCreds.id }&app_key=${ edamamCreds.key }`
         
         fetch(url)
         .then(res => res.json())
@@ -59,16 +58,16 @@ function App() {
     }
 
   return (
-        <div className="App">
-          <Dashboard handleChange={ handleChange } handleSubmit={ handleSubmit } searchString = {searchString}/>
-          <Routes>
-            <Route path='/' element={ <Home />}/>
-            <Route path='/reciperesults' element={ <RecipeResults recipes={ recipes } /> }/>
-            <Route path='/recipe/:label' element={ <Recipe /> } />
-          </Routes>
-        </div>
+    <div className="App">
+      <Dashboard handleChange={ handleChange } handleSubmit={ handleSubmit } searchString = { searchString }/>
+      <Routes>
+        <Route path='/' element={ <Home /> }/>
+        <Route path='/reciperesults' element={ <RecipeResults recipes={ recipes } /> }/>
+        <Route path='/recipe/:label' element={ <Recipe /> } />
+      </Routes>
+    </div>
     
-  );
+  )
 }
 
-export default App;
+export default App

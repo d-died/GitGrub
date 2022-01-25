@@ -46,7 +46,7 @@ return(
             })}
       </div>
       <div className='bold-subtitles yield'>Servings: { recipe.recipe.yield }</div>
-        <div>{cooktime === 0 ? '' : `Prep Time: ${ cooktime } minutes` }</div>
+        <div className='bold-subtitles'>{cooktime === 0 ? '' : `Prep Time: ${ cooktime } minutes` }</div>
     </div>
       </div>
     
