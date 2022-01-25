@@ -7,7 +7,7 @@ const RecipeSearch = ({ handleChange, handleSubmit, searchString}) => {
         <form className='form' onSubmit={ handleSubmit }>
             <input 
                 className='form'
-                placeholder='Search recipes...'
+                placeholder=' Search recipes...'
                 type='text'
                 name='searchString'
                 required
@@ -17,7 +17,7 @@ const RecipeSearch = ({ handleChange, handleSubmit, searchString}) => {
             <button 
                 className='form button' 
                 type='submit'
-            > YUMMM</button>
+            > Search </button>
         </form>
         
     )

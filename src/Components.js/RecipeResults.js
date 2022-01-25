@@ -7,8 +7,8 @@ import App from "../App"
 const RecipeResults = ({ recipes }) => {
     
     console.log(recipes)
-    const cooktime = recipes.recipe.totalTime
-    console.log(cooktime)
+    // const cooktime = recipes.recipe.totalTime
+    // console.log(cooktime)
     
     return(
         recipes.map(recipe => ( 
@@ -29,7 +29,7 @@ const RecipeResults = ({ recipes }) => {
                                 <li>{ recipe.recipe.dietLabels }</li>
                         </ul>
                         <div className="card-time">
-                            <p>{cooktime === 0 ? '' : `Prep Time: ${ cooktime } minutes` }</p>
+                            {/* <p>{cooktime === 0 ? '' : `Prep Time: ${ cooktime } minutes` }</p> */}
                         </div>
                     </div>
                 </div>

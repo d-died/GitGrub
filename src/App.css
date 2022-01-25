@@ -18,6 +18,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
+  opacity: 1.0;
 }
 
 .form {
@@ -32,8 +33,126 @@
 .search {
   display: flex;
   padding: 10px 10px;
+  margin: 10%;
 }
 
 .gif {
-  margin: 10px 10px;
+  margin: 15px 15px;
+  display:flex;
+  flex-direction: row;
+}
+
+.gallery {
+  margin: 10%;
+  display: flex;
+  flex-wrap: row wrap;
+  justify-content: space-around;
+
+}
+
+ul {
+  list-style-type: none;
+  list-style-position: outside;
+}
+
+a {
+  color:rgb(33, 105, 30);
+}
+a:hover {
+  color:rgb(119, 202, 35);
+  
+}
+
+.card {
+  color: black;
+}
+.card:hover {
+  color:blueviolet; 
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  border: black 3px solid;
+  /* max-width: 80vh; */
+}
+
+.recipe {
+  border: rgb(148, 91, 206) 2px groove;
+  background-color: rgb(233, 220, 206);
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 150px 150px 150px;
+  grid-gap: 8px 8px;
+}
+
+.bold-subtitles {
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.recipe-left {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.recipe-right {
+  margin: 7%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+ 
+.yield {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.recipe-name {
+  font-size: 25px;
+  margin: 15px 15px;
+}
+
+.recipe-subtitle {
+  display: flex;
+  align-content: space-around;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+.recipe-image{
+  grid-column-start: 1;
+  /* grid-column-end: 2; */
+  grid-row-start: 1;
+  grid-row-end: 2;
+  margin: 5% 5%;
+  border: 2px rgb(148, 91, 206);
+  border-radius: 10px;
+  /* grid-row-end: 2; */
+}
+
+.recipe-diet {
+  font-size: 15px;
+  padding: 1px;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+.ingredients {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
