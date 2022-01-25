@@ -1,20 +1,39 @@
 .bar {
   background-color:rgb(207, 147, 69); 
   color: whitesmoke;
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  align-items: center;
   padding: 3%;
-  border-radius: 3%;
+  border-radius: 20px;
+}
+
+.dashboard {
+  display: flex wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .gitgrub {
   font-family: 'Sedgwick Ave';
   font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .form {
   font-family: 'Muktu';
   font-size: 25px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  margin: 5px 5px;
+}
+
+.search {
+  display: flex;
+  padding: 10px 10px;
+}
+
+.gif {
+  margin: 10px 10px;
 }

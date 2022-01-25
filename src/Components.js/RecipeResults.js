@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import RecipeSearch from "./RecipeSearch"
 import Recipe from "./Recipe"
+import App from "../App"
 
 const RecipeResults = ({ recipes }) => {
     
+    console.log(recipes)
     const cooktime = recipes.recipe.totalTime
+    console.log(cooktime)
     
     return(
         recipes.map(recipe => ( 

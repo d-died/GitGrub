@@ -5,8 +5,14 @@ import RecipeSearch from "./RecipeSearch";
 const Home = () => {
     return(
         <div>
-            <h2> Bing Bong Recipes </h2>
-            {/* maybe put an image here or something cute */}
+            
+            <div className="gallery">
+                {/* <iframe className="gif" src="https://giphy.com/embed/LVBH3rg1BUROw" width= "90%" height="192"></iframe> */}
+                {/* <iframe className="gif" src="https://giphy.com/embed/VTzex4RfsJA76" width= "90%" height="284" allowFullScreen></iframe> */}
+                {/* <iframe className="gif" src="https://giphy.com/embed/hJAhtnP3PFoIM" width="273" height= "90%" allowFullScreen></iframe> */}
+                <iframe className="gif" src="https://giphy.com/embed/l0IyoEU7iKgmUjlao" width= "90%" height="270"  allowFullScreen></iframe>
+                <iframe className="gif" src="https://giphy.com/embed/3oz8xB06mHyoGE7ZoQ" width= "90%" height="260" allowFullScreen></iframe>
+            </div>
         </div>
     )
 }

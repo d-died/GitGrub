@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 
 const RecipeSearch = ({ handleChange, handleSubmit, searchString}) => {
@@ -7,15 +6,18 @@ const RecipeSearch = ({ handleChange, handleSubmit, searchString}) => {
     return (
         <form className='form' onSubmit={ handleSubmit }>
             <input 
-            className='form'
-            placeholder='Search recipes...'
-            type='text'
-            name='searchString'
-            required
-            onChange={ handleChange }
-            value={ searchString }
+                className='form'
+                placeholder='Search recipes...'
+                type='text'
+                name='searchString'
+                required
+                onChange={ handleChange }
+                value={ searchString }
             />
-            <button className='form' type='submit'>YUMMM</button>
+            <button 
+                className='form button' 
+                type='submit'
+            > YUMMM</button>
         </form>
         
     )

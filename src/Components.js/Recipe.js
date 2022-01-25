@@ -19,8 +19,8 @@ const Recipe = () => {
         <div className='recipe'>
             <div className='recipe-image'>
                 <img
-                    src={ recipe.recipe.image } //imight have to change "hit" out for recipe 
-                    alt={ recipe.recipe.label } //see audobon for a ref assignment
+                    src={ recipe.recipe.image }  
+                    alt={ recipe.recipe.label } 
                 />
             </div>
             <div className="recipe-name">

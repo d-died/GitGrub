@@ -6,24 +6,22 @@ import headerPic from '../img/cooking-header.jpg'
 const Dashboard = ({ handleChange, handleSubmit, searchString }) => {
 
     return(
-        <div >
+        <div className="dashboard">
             <nav 
             className="bar" 
-            style= {{ 
-                backgroundImage: `url(${ headerPic })`,
-                backgroundRepeat: 2
-            }}>
+            style= {{ backgroundImage: `url(${ headerPic })`}}>
                     <h2 className="gitgrub">
                         <Link to='/'>
                             GitGrub
                         </Link>
                     </h2>
-                    <RecipeSearch
-                        handleChange={ handleChange }
-                        handleSubmit={ handleSubmit }
-                        searchString={ searchString } 
-                    />
             </nav>
+            <RecipeSearch
+                className='search'
+                handleChange={ handleChange }
+                handleSubmit={ handleSubmit }
+                searchString={ searchString } 
+            />
         </div>
     )
 }
