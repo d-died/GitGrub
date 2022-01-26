@@ -14,12 +14,12 @@ An app for all people who are tired of sorting through the insane amount of food
 
 
 ## Getting Started
-![Home](./img/Home.png "Home")
-![Search Results](./img/Results.png "Results")
-![Recipe](./img/Recipe.png "Recipe")
+![Home](/img/Home.png "Home")
+![Search Results](.img/Results.png "Results")
+![Recipe](/img/Recipe.png "Recipe")
 
 Let's take a [look](https://vigilant-panini-22dc02.netlify.app)!
 ------------------------------------------  
 
 ## Contribution Guidelines
-- If you would like to contribute to this project, fork & clone [this](https://https://github.com/dsump/GitGrub) directory. All necessary code files are in src/Components. If you have suggestions, feel free to file an issue on GitHub and we can review together. In that case, start a pull request and I'll take a look at any bugs you fix or ideas for expansion you may have. 
+- If you would like to contribute to this project, fork & clone [this](https://github.com/dsump/GitGrub) directory. All necessary code files are in src/Components. If you have suggestions, feel free to file an issue on GitHub and we can review together. In that case, start a pull request and I'll take a look at any bugs you fix or ideas for expansion you may have. 
