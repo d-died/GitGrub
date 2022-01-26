@@ -11,7 +11,7 @@ const Dashboard = ({ handleChange, handleSubmit, searchString }) => {
             className="bar" 
             style= {{ backgroundImage: `url(${ headerPic })`}}>
                     <h2 className="gitgrub">
-                        <Link to='/'>
+                        <Link to='/' className="link">
                             GitGrub
                         </Link>
                     </h2>

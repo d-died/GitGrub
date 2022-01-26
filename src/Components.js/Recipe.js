@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useState } from 'react'
+import React from 'react'
 import { useParams, useLocation } from 'react-router-dom'
 
 const Recipe = () => {
@@ -10,13 +10,9 @@ const Recipe = () => {
     const cooktime = recipe.recipe.totalTime
     const ingredients = recipe.recipe.ingredientLines
 
-    console.log(recipe)
-    
-    // const [ listing, setListing ] = useState(null)
-    // const url = { recipe.links.}
 
 return(
-  <div className='recipe grid-container'>
+  <div className='recipe grid-container' key={ recipe.recipe.label }>
       <div className='recipe-left'>
         <div className='recipe-image grid-item'>
         <img
@@ -25,9 +21,7 @@ return(
                 />
         </div>
         <div className='recipe-subtitle'>
-        <a className='recipe-name' href={ recipe.recipe.url }>{ recipe.recipe.label }</a>
-        {/* //   <a className="recipe-link" href=>View Full Recipe Here </a> */}
-        
+          <a className='recipe-name' href={ recipe.recipe.url }>{ recipe.recipe.label }</a>
         </div>
       </div>
       <div className='recipe-right'>

@@ -1,19 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import RecipeSearch from './RecipeSearch'
-import Recipe from './Recipe'
-import App from '../App'
 
 const RecipeResults = ({ recipes }) => {
     
-    console.log(recipes)
-    // const cooktime = recipes.recipe.totalTime
-    // console.log(cooktime)
-    
     return(
-        recipes.map(recipe => ( 
-          <Link to={ `/recipe/${ recipe.recipe.label }` }
-            state={ { recipe:recipe.recipe } } >
+      <div className='results'>
+        {recipes.map(recipe => ( 
+          <Link to={ `/recipe/${ recipe.recipe.label }`} 
+            key={ recipe.recipe.calories }
+            state={ { recipe:recipe.recipe } } 
+            className='link'>
             <div className="container" >
               <div className='card'>
                 <div className='card-image'>
@@ -22,19 +18,21 @@ const RecipeResults = ({ recipes }) => {
                                 alt={ recipe.recipe.label } 
                             />
                 </div>
-                <div className="card-name">
-                  <p>{ recipe.recipe.label }</p>
+                <div className="card-name subtitle">
+                  { recipe.recipe.label }
                 </div>
-                <ul className="card-diet">
-                  <li>{ recipe.recipe.dietLabels }</li>
-                </ul>
-                <div className="card-time">
-                  {/* <p>{cooktime === 0 ? '' : `Prep Time: ${ cooktime } minutes` }</p> */}
+                <div className="card-diet subtitle bold-subtitles">
+                  { recipe.recipe.dietLabels }
+                </div>
+                <div className="card-time subtitle bold-subtitles">
+                  {recipe.recipe.totalTime === 0 ? '' : `Prep Time: ${ recipe.recipe.totalTime } minutes` }
                 </div>
               </div>
             </div>
           </Link>
-                ))   
+                ))}   
+      </div>
+        
         
     )
 }
