@@ -14,9 +14,9 @@ An app for all people who are tired of sorting through the insane amount of food
 
 
 ## Getting Started
-![Home](/img/Home.png "Home")
-![Search Results](.img/Results.png "Results")
-![Recipe](/img/Recipe.png "Recipe")
+![Home](Home.png "Home")
+![Search Results](Results.png "Results")
+![Recipe](Recipe.png "Recipe")
 
 Let's take a [look](https://vigilant-panini-22dc02.netlify.app)!
 ------------------------------------------  
