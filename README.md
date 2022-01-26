@@ -4,7 +4,7 @@
 ## Description
 
 An app for all people who are tired of sorting through the insane amount of food blogs and what not in order to just decide on a recipe. A user can search for an ingredient, a diet (ie. vegan, high-protein), almost whatever and get a list of recipes back. Great for greasing the wheels on some culinary inspiration. 
-----------------------------------------------------
+
 
 ### Technologies Used
 1. CSS
